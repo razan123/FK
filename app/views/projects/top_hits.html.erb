@@ -1,0 +1,13 @@
+Top Hits
+<table style="width:50%" border="1">
+  <tr>
+    <th>Title</th>
+    <th>Abstract</th>		
+    </tr>
+    </table>
+<% @projects.each do |project| %>
+	Title:<%= project.title %> </br>
+	Abstract:<%= project.abstract %> </br>
+	Description:<%= project.description%> </br>
+	Budget: $<%= project.budget%> </br>
+<%end%>

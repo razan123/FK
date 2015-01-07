@@ -24,7 +24,11 @@ KickStarter::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  resources :projects
+  resources :projects do
+  collection do
+    get :top_hits
+  end
+end
 
 
   # Sample resource route with sub-resources:

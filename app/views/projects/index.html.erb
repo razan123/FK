@@ -3,11 +3,20 @@ Number of Projects=<%= @count %><br><br>
 <h2>Project List</h2>
 
 
-</br>
+
+<table style="width:50%" border="1">
+  <tr>
+    <th>Title</th>
+    <th>Abstract</th>		
+    </tr>
+    </table>
 <% @projects.each do |project| %>
 	<%= project.title %>
 	<%= project.abstract %>
 	<%= link_to 'Edit', edit_project_path(project.id)%><br>
 	<%= link_to 'Delete', project_path(project.id),method:'DELETE'%><br>
+	<%= link_to 'Show', project_path(project.id) %> <br>
+
 <%end%>
 <%= link_to 'Add Project', new_project_path %>
+<%= link_to 'TOP HITS', top_hits_projects_path %>

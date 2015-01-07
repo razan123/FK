@@ -1,12 +1,2 @@
 <h1>Add New Project</h1>
-<%= form_for @project do |f|%>
-	<%=f.label :title%></br>
-	<%=f.text_field :title%></br>
-  <%=f.label :description%></br>
-  <%=f.text_field :description %></br>
-  <%=f.label :abstract%></br>
-  <%=f.text_field :abstract %></br>
-  <%=f.label :budget%></br>
-  <%=f.text_field :budget %></br>
-  <%=f.submit'Add'%>
-<%end%>
+<%=render 'form', button_name:'Add' %>
