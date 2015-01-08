@@ -17,6 +17,7 @@ before_filter :find_project, :only => [:edit, :update, :destroy]
 
 	def index
 		@projects=Project.all
+		#@ongoing_project = Project.ongoing
 		@count=Project.count
 	end
 

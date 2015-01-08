@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150107060035) do
+ActiveRecord::Schema.define(:version => 20150108051221) do
+
+  create_table "profiles", :force => true do |t|
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "student_id"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -20,6 +27,16 @@ ActiveRecord::Schema.define(:version => 20150107060035) do
     t.float    "budget"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "status"
   end
+
+  create_table "students", :force => true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "students", ["project_id"], :name => "index_students_on_project_id"
 
 end
